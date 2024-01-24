@@ -1,8 +1,13 @@
+import { notFound } from "next/navigation";
+
 export default function ProductsDetails({
     params,
 }: {
     params: { productID: string };
 }) {
+    if (parseInt(params.productID) > 100) {
+        return notFound();
+    }
     return (
         <>
             <h1>{params.productID}</h1>
