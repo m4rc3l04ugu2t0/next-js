@@ -6,7 +6,7 @@ export default function ProductsDetails({
     params: { productID: string };
 }) {
     if (parseInt(params.productID) > 100) {
-        return notFound();
+        notFound();
     }
     return (
         <>
