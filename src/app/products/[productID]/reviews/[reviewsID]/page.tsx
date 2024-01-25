@@ -1,10 +1,28 @@
 import { notFound } from "next/navigation";
+import { Metadata } from "next";
 
-export default function ProductIdReview({
+interface ParamsProps {
+    params: {
+        productID: string;
+        reviewsID: string;
+    };
+}
+
+export const generateMetadata = async ({
     params,
-}: {
-    params: { productID: string; reviewsID: string };
-}) {
+}: ParamsProps): Promise<Metadata> => {
+    const title = await new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(`Iphone reviwes ${params.reviewsID}`);
+        }, 100);
+    });
+
+    return {
+        title: `Title ${title}`,
+    };
+};
+
+export default function ProductIdReview({ params }: ParamsProps) {
     if (parseInt(params.reviewsID) > 100) {
         notFound();
     }
