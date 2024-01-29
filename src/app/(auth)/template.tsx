@@ -15,6 +15,8 @@ export default function AuthLayout({
         { name: "login", href: "/form/login" },
         { name: "forgot-password", href: "/form/forgot-pasword" },
         { name: "register", href: "/form/register" },
+        { name: "form", href: "/form" },
+        { name: "use-profile", href: "/use-profile" },
     ];
 
     const [input, setInput] = useState("");
@@ -23,11 +25,13 @@ export default function AuthLayout({
 
     return (
         <>
-            <input
-                type="text"
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-            />
+            <div>
+                <input
+                    type="text"
+                    value={input}
+                    onChange={(e) => setInput(e.target.value)}
+                />
+            </div>
             <nav>
                 {navLinks.map((link, index) => {
                     const isActive = pathName.startsWith(link.href);

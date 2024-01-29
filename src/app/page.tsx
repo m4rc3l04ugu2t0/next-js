@@ -8,6 +8,7 @@ export default function Home() {
                     <li>
                         <Link href={"/profile"}>Profile</Link>
                         <Link href={"/products"}>Product</Link>
+                        <Link href={"/about"}>About</Link>
                     </li>
                 </ul>
             </nav>
