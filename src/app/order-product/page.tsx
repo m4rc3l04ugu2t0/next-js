@@ -1,19 +1,19 @@
-"use client";
+'use client'
 
-import { useRouter } from "next/navigation";
+import { useRouter } from 'next/navigation'
 
 export default function OrderProduct() {
-    const router = useRouter();
+  const router = useRouter()
 
-    const handleClick = () => {
-        console.log("Placing your order");
-        router.push("/");
-    };
+  const handleClick = () => {
+    console.log('Placing your order')
+    router.push('/')
+  }
 
-    return (
-        <>
-            <h1>Order Product</h1>
-            <button onClick={handleClick}>Place order</button>
-        </>
-    );
+  return (
+    <>
+      <h1>Order Product</h1>
+      <button onClick={handleClick}>Place order</button>
+    </>
+  )
 }
